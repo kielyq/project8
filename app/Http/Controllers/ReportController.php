@@ -24,8 +24,8 @@ public function destroy(Report $report){
 //создание отчета 
 public function store(Request $request, Report $report){
   $data = $request -> validate([
-    'number' => 'string',
-    'desctiprion' => 'text',
+    'number' => 'integer',
+    'description' => 'string',
   ]);
 
   $report -> create($data);
