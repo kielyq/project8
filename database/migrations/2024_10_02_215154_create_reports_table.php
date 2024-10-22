@@ -12,10 +12,11 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('reports', function (Blueprint $table) {
-            $table->usignedBigInteger('id')->primary();
+            $table->id->primary();
             $table->text('description');
             $table->timestamp('create_at');
             $table->timestamp('update_at');
+            $table->timestamp('deleted_at');
         });
     }
 
