@@ -32,4 +32,22 @@ public function store(Request $request, Report $report){
   return redirect()->back();
   
 }
+
+//создание show
+public function show(Report $report){
+  return view('report.show', compact('report'));
+  
+}
+
+//обновление создание
+public function update(Request $request, Report $report){
+  $data = $request -> validate([
+    'number' => 'integer',
+    'description' => 'string',
+  ]);
+
+  $report -> update($data);
+  return redirect()->back();
+  
+}
 }

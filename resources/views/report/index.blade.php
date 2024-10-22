@@ -15,7 +15,7 @@
                 <p class="font-sans text-sm font-normal inline-block align-text-bottom pt-2 text-cyan-900">
                 {{$report->create_at}}
                 </p>
-
+               
                 <form action="{{ route('reports.destroy', $report->id) }}" method="POST" style="border-2 border-black-100">
             @csrf 
             @method('delete')
@@ -31,12 +31,12 @@
     <form method="POST" action="{{ route('reports.store') }}">
         @csrf
         <div class="mb-4">
-        <p class="block text-gray-700 font-bold mb-2">Номер:</p>
+        <label for="number" class="block text-gray-700 font-bold mb-2">Номер:</label>
         <input type="text" id="number" name="number" placeholder="номер" required
             class="border border-gray-300 rounded-lg p-2">
     </div>
     <div class="mb-4">
-        <p class="block text-gray-700 font-bold mb-2">Описание:</p>
+        <label for="description" class="block text-gray-700 font-bold mb-2">Описание:</label>
         <textarea id="description" name="description" placeholder="описание" required class="border border-gray-300 rounded-lg p-2 "></textarea>
     </div>
         <button type="submit" class="border-2">Создать</button>
