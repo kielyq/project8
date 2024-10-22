@@ -12,11 +12,9 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('reports', function (Blueprint $table) {
-            $table->id->primary();
+            $table->id();
             $table->text('description');
-            $table->timestamp('create_at');
-            $table->timestamp('update_at');
-            $table->timestamp('deleted_at');
+            $table->timestamps();
         });
     }
 

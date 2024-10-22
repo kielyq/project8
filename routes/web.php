@@ -14,3 +14,4 @@ Route::get('/main', [MainController::class, 'showIndex'])->name('main');
 Route::get('/reports', [ReportController::class, 'index'])->name('report.index');
 Route::get('/array', [MainController::class, 'showArray'])->name('array');
 
+Route::delete('/reports/{report}', [ReportController::class, 'destroy'])->name('reports.destroy');

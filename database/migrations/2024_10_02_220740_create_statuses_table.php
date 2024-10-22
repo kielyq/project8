@@ -13,10 +13,9 @@ return new class extends Migration
     {
         Schema::create('statuses', function (Blueprint $table) {
 
-            $table->id->primary();
+            $table->id();
             $table->string('name');
-            $table->timestamp('create_at')->useCurrent();
-            $table->timestamp('update_at')->useCurrent()->useCurrentOnUpdate();
+            $table->timestamps();
                       
 
          });

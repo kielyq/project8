@@ -12,4 +12,12 @@ class ReportController extends Controller
     $reports = Report::all(); // выборка всех данных из таблицы reports.
     return view('report.index', compact('reports'));
   }
+
+      
+//удаление 
+public function destroy(Report $report){
+  $report->delete();
+  return redirect()->route('report.index');
+  
+}
 }
