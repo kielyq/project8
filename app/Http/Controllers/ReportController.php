@@ -17,7 +17,19 @@ class ReportController extends Controller
 //удаление 
 public function destroy(Report $report){
   $report->delete();
-  return redirect()->route('report.index');
+  return redirect()->back();
+  
+}
+
+//создание отчета 
+public function store(Request $request, Report $report){
+  $data = $request -> validate([
+    'number' => 'string',
+    'desctiprion' => 'text',
+  ]);
+
+  $report -> create($data);
+  return redirect()->back();
   
 }
 }
