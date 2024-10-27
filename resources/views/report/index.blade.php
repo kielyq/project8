@@ -21,6 +21,7 @@
             @method('delete')
             <button type="submit">Удалить</button>
         </form>
+        <a href="{{ route('report.update', $report->id) }}">Обновить</a>
             </div>
         </div>
         @endforeach
