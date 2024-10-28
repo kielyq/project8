@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ReportController;
+
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -26,8 +27,8 @@ Route::middleware('auth')->group(function () {
     Route::post('/reports', [ReportController::class,'store']) -> name('reports.store');
     
     Route::get('/reports/{report}', [ReportController::class, 'show'])->name('report.show');
-    Route::put('/reports/{report}', [ReportController::class, 'update'])->name('report.update');
-  
+    Route::put('/reports/{report}', [ReportController::class, 'update'])->name('reports.update');
+
 });
 
 require __DIR__.'/auth.php';

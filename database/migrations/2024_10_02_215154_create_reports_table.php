@@ -16,6 +16,9 @@ return new class extends Migration
             $table->string('number');
             $table->string('description');
             $table->timestamps();
+           $table->foreignId('status_id')->nullable()->constrained();
+            $table->foreignId('user_id')->nullable()->constrained();
+          
         });
     }
 
