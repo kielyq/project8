@@ -7,14 +7,17 @@
         <div class="shadow-md w-64 m-16 " >
             <div class="card-text m-6 ">
                 <p class="font-sans text-lg font-normal text-sky-600">
-                {{$report->number}}
+               Номер: {{$report->number}}
                 </p>
                 <p class="font-sans font-medium leading-relaxed text-pretty text-sky-900">
+               Описание:
                 {{$report->description}}
                 </p>
+                @isset($report->status->name)
                 <p class="font-sans text-sm font-normal inline-block align-text-bottom pt-3 pb-2 text-cyan-900">
                 Статус: {{$report->status->name}}
                 </p>
+                @endisset
                 <p class="font-sans text-sm font-normal inline-block align-text-bottom pt-2 text-cyan-900">
                 {{$report->created_at}}
                 </p>
@@ -47,12 +50,6 @@
     </div>
   
 
-  <!--<label for="status" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Статус заявки:</label>
-  <select id="status" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block  p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-  @foreach ($statuses as $status)
-  <option value="{{$status->id}}">{{$status->name}}</option>
-  @endforeach
-  </select>-->
 
 
 
