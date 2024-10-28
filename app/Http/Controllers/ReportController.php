@@ -15,14 +15,14 @@ class ReportController extends Controller
   }
 
       
-//удаление 
+
 public function destroy(Report $report){
   $report->delete();
   return redirect()->back();
   
 }
 
-//создание отчета 
+
 public function store(Request $request, Report $report){
   $data = $request -> validate([
     'number' => 'integer',
@@ -40,7 +40,7 @@ public function show(Report $report){
   
 }
 
-//обновление создание
+
 public function update(Request $request, Report $report){
   $data = $request -> validate([
     'number' => 'integer',
