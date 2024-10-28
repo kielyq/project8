@@ -26,13 +26,13 @@
     <div class="card-container">
     @foreach ($array as $arr)
         <div class="card">
-        <img src="{{$arr['path']}}" alt="bed" class="card-img">
+        <img src="{{$arr->path}}" alt="bed" class="card-img">
             <div class="card-text">
                 <p class="title-card">
-                {{$arr['title']}}
+                {{$arr->title}}
                 </p>
                 <p class="price-card">
-                {{$arr['price']}}
+                {{$arr->price}}
                 </p>
             </div>
         </div>

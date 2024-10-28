@@ -34,7 +34,7 @@ public function store(Request $request, Report $report){
   
 }
 
-//создание show
+
 public function show(Report $report){
   return view('report.show', compact('report'));
   

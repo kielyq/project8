@@ -22,7 +22,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/reports', [ReportController::class, 'index'])->name('report.index');
     Route::get('/array', [MainController::class, 'showArray'])->name('array');
     
-    Route::delete('/reports/{report}', [ReportController::class, 'destroy'])->name('reports.destroy');
+    Route::delete('/reports/{report}', [ReportController::class, 'destroy'])->name('report.destroy');
     
     Route::post('/reports', [ReportController::class,'store']) -> name('reports.store');
     
