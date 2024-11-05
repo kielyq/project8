@@ -1,8 +1,10 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ReportController;
 use App\Http\Controllers\MainController;
+use App\Http\Middleware\Admin;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -29,6 +31,11 @@ Route::middleware('auth')->group(function () {
     Route::get('/reports/{report}', [ReportController::class, 'show'])->name('report.show');
     Route::put('/reports/{report}', [ReportController::class, 'update'])->name('report.update');
 
+});
+
+Route::middleware((Admin::class)) -> group(function(){
+    Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
+    
 });
 
 require __DIR__.'/auth.php';
