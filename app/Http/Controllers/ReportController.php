@@ -4,12 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Report;
-
+use Illuminate\Support\Facades\Auth;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 
 class ReportController extends Controller
 {
   public function index(){
-    $reports = Report::all();
+    $reports = Report::where('user_id', Auth::user()->id)->get();
     
     return view('report.index', compact('reports'));
   }
@@ -22,15 +23,24 @@ public function destroy(Report $report){
   
 }
 
+public function create() {
+  return view('report.index');
+}
 
-public function store(Request $request, Report $report){
-  $data = $request -> validate([
-    'number' => 'integer',
-    'description' => 'string',
-  ]);
+public function store(Request $request): RedirectResponse{
+    $request->validate([
+      'number' => ['required', 'string', 'max:255'],
+      'description' => ['required', 'string'],
+    ]);
 
-  $report -> create($data);
-  return redirect()->back();
+    Report::create([
+      'number' => $request -> number,
+        'description' => $request->description,
+        'status_id' => 1,
+        'user_id' => Auth::user()->id,
+    ]);
+
+    return redirect()->route('dashboard');
   
 }
 

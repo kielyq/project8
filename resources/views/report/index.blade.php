@@ -39,14 +39,12 @@
 
     <form method="POST" action="{{ route('reports.store') }}">
         @csrf
-        <div class="mb-4">
-        <label for="number" class="block text-gray-700 font-bold mb-2">Номер:</label>
-        <input type="text" id="number" name="number" placeholder="номер" required
-            class="border border-gray-300 rounded-lg p-2">
-    </div>
-    <div class="mb-4">
-        <label for="description" class="block text-gray-700 font-bold mb-2">Описание:</label>
-        <textarea id="description" name="description" placeholder="описание" required class="border border-gray-300 rounded-lg p-2 "></textarea>
+      <div>
+        <x-input-label for="number" :value="_('Номер автомобиля')" />
+        <x-text-input id="number" class="block mt-1" type="text" name="number" required/>
+        x-im  
+    
+    
     </div>
   
 
