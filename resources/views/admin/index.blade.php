@@ -10,6 +10,7 @@
             <th class="border border-gray-300 px-4 py-2">Номер заявления</th>
             <th class="border border-gray-300 px-4 py-2">Номер авто</th>
             <th class="border border-gray-300 px-4 py-2">Текст заявления</th>
+            <th class="border border-gray-300 px-4 py-2">Статус заявления</th>
         </tr>
     </thead>
     <tbody>
@@ -18,6 +19,7 @@
         <td class="border border-gray-300 px-4 py-2">{{ $report->id }}</td>
         <td class="border border-gray-300 px-4 py-2">{{ $report->number }}</td>
         <td class="border border-gray-300 px-4 py-2">{{ $report->description }}</td>
+        <td class="border border-gray-300 px-4 py-2">{{ $report->status->name }}</td>
     </tr> 
     @endforeach
     </tbody>

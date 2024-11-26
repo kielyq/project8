@@ -42,15 +42,14 @@
       <div>
         <x-input-label for="number" :value="_('Номер автомобиля')" />
         <x-text-input id="number" class="block mt-1" type="text" name="number" required/>
-        x-im  
-    
-    
+        <x-input-error :messages="$errors->get('number')" class="mt-2" />
     </div>
-  
-
-
-
-
+    <!-- Number -->
+    <div>
+        <x-input-label for="description" :value=" _('Описание')" />
+        <x-textarea id="description" class="block mt-1" rows="10" cols="35" name="description" />
+        <x-input-error :messages="$errors->get('description')" class="mt-2" />
+    </div>
         <button type="submit" class="border-2 mt-5">Создать</button>
     </form>
 </div>
