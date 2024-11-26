@@ -26,7 +26,7 @@ Route::middleware('auth')->group(function () {
     
     Route::delete('/reports/{report}', [ReportController::class, 'destroy'])->name('reports.destroy');
 
-    
+
     Route::get('/create', [ReportController::class,'create']) -> name('reports.create');
     Route::post('/store', [ReportController::class,'store']) -> name('reports.store');
  
@@ -37,7 +37,7 @@ Route::middleware('auth')->group(function () {
 
 Route::middleware((Admin::class)) -> group(function(){
     Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
-    
+    Route::patch('/update', [ReportController::class, 'statusUpdate'])->name('reports.update');
 });
 
 require __DIR__.'/auth.php';
