@@ -30,9 +30,7 @@
     </div>
     @endforeach
 </div>
-
-Find More
-
-
  
+ 
+    
 @endsection()
